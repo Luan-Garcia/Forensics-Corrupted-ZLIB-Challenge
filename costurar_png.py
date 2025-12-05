@@ -3,8 +3,8 @@ import zlib
 import os
 
 # --- Dimensões da Imagem ---
-WIDTH = 1563
-HEIGHT = 1563
+WIDTH = 0
+HEIGHT = 0
 # ---------------------------------
 
 def create_png(width, height, zlib_data):
@@ -26,7 +26,7 @@ def create_png(width, height, zlib_data):
     return signature + ihdr + idat + iend
 
 try:
-    with open('3C3.zlib', 'rb') as f:
+    with open('arquivo.zlib', 'rb') as f:
         zlib_data = f.read()
 
     png_data = create_png(WIDTH, HEIGHT, zlib_data)
